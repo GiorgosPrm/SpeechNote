@@ -5,7 +5,7 @@ import SwiftUI
 struct SpeechNoteApp: App {
     var body: some Scene {
         WindowGroup {
-            RecordingScreenView()
+            HomeScreen()
         }
     }
 }

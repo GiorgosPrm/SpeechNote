@@ -1,8 +1,10 @@
 
 import SwiftUI
+import Combine
+import AVFoundation
 
 struct ButtonView: View {
-    
+    @StateObject private var rec = MicrophoneAccess()
     
     var body: some View {
         HStack (spacing: 40) {
@@ -20,14 +22,20 @@ struct ButtonView: View {
             
             VStack {
                 Button(action: {
-                    
+                    if rec.isRecording{
+                        rec.stopRecording()
+                    } else {
+                        rec.startRecording()
+                    }
                 }, label: {
-                    Image(systemName: "record.circle")
+                    Image(systemName: rec.isRecording
+                          ? "stop.circle.fill"
+                          : "record.circle")
                         .font(.system(size: 50))
-                        .foregroundColor(Color(.beige))
+                        .foregroundStyle(rec.isRecording ? .red : Color(.beige))
                 })
                 
-                Text("Recording")
+                Text(rec.isRecording ? "Stop" : "")
             }
             
             VStack {

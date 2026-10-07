@@ -3,11 +3,17 @@ import SwiftUI
 
 struct HomeScreen: View {
     var body: some View {
-        VStack {
-            RecordingButtonView()
-            Spacer()
-            LastRecordingView()
-            Spacer()
+        NavigationStack {
+            VStack {
+                NavigationLink {
+                    RecordingScreenView()
+                } label: {
+                    RecordingButtonView()
+                }
+                
+                Spacer()
+                LastRecordingView()
+            }.padding()
         }
     }
 }
