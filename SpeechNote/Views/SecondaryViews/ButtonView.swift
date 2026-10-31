@@ -20,23 +20,7 @@ struct ButtonView: View {
                 Text("Pause")
             }
             
-            VStack {
-                Button(action: {
-                    if rec.isRecording{
-                        rec.stopRecording()
-                    } else {
-                        rec.startRecording()
-                    }
-                }, label: {
-                    Image(systemName: rec.isRecording
-                          ? "stop.circle.fill"
-                          : "record.circle")
-                        .font(.system(size: 50))
-                        .foregroundStyle(rec.isRecording ? .red : Color(.beige))
-                })
-                
-                Text(rec.isRecording ? "Stop" : "")
-            }
+            //NoteEditorView(isTranscribing: )
             
             VStack {
                 Button(action: {

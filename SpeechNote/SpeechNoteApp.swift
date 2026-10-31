@@ -1,11 +1,12 @@
-
+import SwiftData
 import SwiftUI
 
 @main
 struct SpeechNoteApp: App {
     var body: some Scene {
         WindowGroup {
-            HomeScreen()
+            LaunchScreenView()
         }
+        .modelContainer(for: Note.self) //Sets local storage
     }
 }

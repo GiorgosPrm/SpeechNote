@@ -1,3 +1,7 @@
+# Ignore the functions directory anywhere or at the root
+/SpeechNote/Functions/
+/SpeechNote/functions/
+Functions/
+functions/
 
-SpeechNote/Functions/MicrophoneAccess.swift
 SpeechNote/Assets.xcassets/AppIcon.appiconset

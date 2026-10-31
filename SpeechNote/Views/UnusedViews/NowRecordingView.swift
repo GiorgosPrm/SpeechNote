@@ -1,9 +1,25 @@
-
 import SwiftUI
 
 struct NowRecordingView: View {
     var body: some View {
-        Text("Yeah, you are now recording")
+        NavigationStack {
+            VStack {
+                NavigationLink {
+                    //NoteEditorView()
+                } label: {
+                    RecordingButtonView()
+                }
+                .frame(maxWidth: .infinity, maxHeight: .infinity)
+                
+                PreviewsNotesView()
+                    .frame(maxWidth: .infinity, maxHeight: .infinity)
+            }
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    MenuView()
+                }
+            }
+        }
     }
 }
 

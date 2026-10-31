@@ -9,7 +9,7 @@ struct RecordingScreenView: View {
             
             VStack {
                 Spacer()
-                ButtonView()
+                //NoteEditorView()
             }
         }
     }
